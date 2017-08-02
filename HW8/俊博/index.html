@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>test</title>
+    <!--
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+
+
+    <script src="hw8.js"></script>
+
+    <style type="text/css">
+        .search-container {
+            height: 60px;
+            background-color: #eee;
+            margin-top: 20px;
+        }
+
+        .title {
+            font-size: 20px;
+            padding-left: 14px;
+            color: rgb(61, 88, 154);
+        }
+
+        .input-group-lg > .input-group-btn > .btn {
+            padding: 10px 42px;
+        }
+
+        .search-input-group {
+            margin-top: 6px;
+        }
+
+        .clear-btn {
+            border-color: rgb(61, 88, 154);
+            color: rgb(61, 88, 154);
+            margin-top: 6px;
+        }
+
+        .nav-tabs.nav-justified > .active > a,
+        .nav-tabs.nav-justified > .active > a:visited,
+        .nav-tabs.nav-justified > .active > a:hover,
+        .nav-tabs.nav-justified > .active > a:active {
+            border: none;
+            background-color: rgb(61, 88, 154);
+            color: #fff;
+        }
+
+        .nav-tabs.nav-justified > li > a {
+            border-bottom: 2px solid rgb(61, 88, 154);
+            color: #000;
+            cursor: pointer;
+        }
+
+        .table-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body ng-controller="MyController">
+<div class="container-fluid">
+    <div class="search-container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h1 class="title">FB Search</h1>
+            </div>
+            <div class="col-sm-5">
+                <div class="input-group input-group-lg search-input-group">
+                    <input type="text" class="form-control" placeholder="type something..." ng-model="keyword">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" ng-click="kwFunc()"><span class="glyphicon glyphicon-search"></span></button>
+                      </span>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-default btn-lg clear-btn">Clear</button>
+            </div>
+        </div>
+    </div>
+    <div class="container tab-content current">
+        <ul class="nav nav-tabs nav-justified tab-pane in active">
+            <li role="presentation" class="active"><a data-toggle="tab" href="#users">Users</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#pages">Pages</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#events">Events</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#places">Places</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#groups">Groups</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#favorites">Favorites</a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div id="users" class="tab-pane fade in active">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Profile photo</th>
+                        <th>Name</th>
+                        <th>Favorite</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr dir-paginate="users in userJson | filter:selectedState |  orderBy:'last_name'| orderBy:'state_name' | itemsPerPage: 10" pagination-id="legState_pg">-->
+                    <tr ng-repeat="users in userJson">
+                        <td>{{ $index + 1 }}</td>
+                        <td><img src="{{users.picture.data.url}}" class="img-responsive img-circle" height="30" width="40"></td>
+                        <td>{{users.name}}</td>
+                        <td>
+                            <button class="btn btn-default"><span class="glyphicon glyphicon-star-empty"></span></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="pages" class="tab-pane fade">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Profile photo</th>
+                    <th>Name</th>
+                    <th>Favorite</th>
+                    <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="pages in pageJson">
+                    <td>{{ $index + 1 }}</td>
+                    <td><img src="{{pages.picture.data.url}}" class="img-responsive img-circle" height="30" width="40"></td>
+                    <td>{{pages.name}}</td>
+
+                    <td>
+                        <button class="btn btn-default"><span class="glyphicon glyphicon-star-empty"></span></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script src="jquery-1.12.0.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script type="text/javascript">
+    $('.content-nav a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>
+</body>
+</html>

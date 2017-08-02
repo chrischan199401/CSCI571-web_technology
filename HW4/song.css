@@ -1,0 +1,13 @@
+SONG {display: block}
+TITLE {display: block; font-family: Helvetica,
+serif; font-size: 20pt; font-weight: bold}
+COMPOSER {display: block; font-family: Times,
+Times New Roman, serif; font-size: 14pt; fontstyle:
+italic}
+ARTIST {display: block; font-family: Times, Times
+New Roman, serif; font-size: 14pt; font-weight:
+bold; font-style: italic}
+PUBLISHER {display: block; font-family: Times,
+Times New Roman, serif; font-size: 14pt}
+YEAR {display: block; font-family: Times, Times
+New Roman, serif; font-size: 14pt} 

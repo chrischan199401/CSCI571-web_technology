@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    
+
+    
+<div class="container">
+<form class="navbar-form navbar-left" role="search">
+    <b style>FB Search &nbsp;&nbsp;&nbsp;&nbsp;</b>
+    <div class="form-group">
+        <input type="text" class="form-control" name="keywords" id = "keyword" placeholder="usc" ng-model="text" >
+    </div>
+    <button type="submit" class="btn btn-default" name="search_submit"><span class="glyphicon glyphicon-search"></span></button>
+    <button type="submit" class="btn btn-default">Clear</button>
+</form>    
+</div>
+    
+<div class="container tab-content current">
+    <ul class="nav nav-tabs nav-justified tab-pane in active">
+        <li role="presentation" class="active"><a data-toggle="tab" href="#users">Users</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#pages">Pages</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#events">Events</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#places">Places</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#groups">Groups</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#favourites">Favourites</a></li>
+    </ul>
+</div>
+
+<div class="tab-content">
+    <div id="users" class="tab-pane fade in active" ng-app="myApp" ng-controller="usersCtrl">
+      <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Profile photo</th>
+                <th>Name</th>
+                <th>Favourite</th>
+                <th>Details</th>
+            </tr>
+            <tr ng-repeat="user in users">
+                <th>{{ $index + 1 }}</th>
+                <th><img src="{{user.picture.data.url}}" style="width:40px;height:40px"></th>
+                <th>{{user.name}}</th>
+                <th>Favourite</th>
+                <th>Details</th>
+            </tr>
+      </table>
+    </div>
+    <div id="pages" class="tab-pane fade">
+      <div id="users" class="tab-pane fade in active" ng-app="myApp" ng-controller="usersCtrl">
+      <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Profile photo</th>
+                <th>Name</th>
+                <th>Favourite</th>
+                <th>Details</th>
+            </tr>
+            <tr ng-repeat="user in users">
+                <th>{{ $index + 1 }}</th>
+                <th><img src="{{user.picture.data.url}}" style="width:40px;height:40px"></th>
+                <th>{{user.name}}</th>
+                <th>Favourite</th>
+                <th>Details</th>
+            </tr>
+      </table>
+    </div>
+    </div>
+    <div id="events" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="places" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+    <div id="groups" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+    <div id="favourites" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+</div>
+    
+<ul class="pager">
+    <li><a href="#" ng-app="myApp" ng-controller="previousCtrl">Previous</a></li>
+    <li><a href="#" ng-app="myApp" ng-controller="nextCtrl">Next</a></li>
+  </ul>
+    
+
+</body>
+</html>

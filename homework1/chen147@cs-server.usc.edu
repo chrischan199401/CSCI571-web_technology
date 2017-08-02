@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <style type="text/css">
+    body {background-image: url(pic2.jpg); 
+      background-attachment:fixed;}
+    div#outer {width: 500px;}
+    div#inner {text-indent: 10%;}
+    p {width: 200px;}
+  </style>
+  <title> replace with your document's title </title>
+
+  <script type="text/javascript">
+    if(document.images){
+      adImages = new Array("pic.jpg", "pic2.jpg", "pic3.jpg");
+      adURLs = new Array("WWW.baidu.com", "www.google.com", "www.taobao.com");
+      thisAd = 0;
+    }
+    function cycleAds(){
+      if(document.images){
+        if(document.adBanner.complete){
+          if(++thisAd == adImages.length)
+            thisAd = 0;
+
+          document.adBanner.src = adImages[thisAd];
+        }
+      }
+      setTimeout("cycleAds()", 3000);
+
+    }
+    function gotoAd(){
+      document.location.href = "http://"+ adURLs[thisAd];
+    }
+
+  </script>
+
+</head>
+
+<body onload="cycleAds()">
+replace with your <em>interesting</em> document's content
+<p>This is the first paragraph.</p>
+<ul>
+  <li>the first list item</li>
+
+  <li>the second list item</li>
+
+  <li>the third list item</li>
+</ul>
+
+<ol>
+  <li>the first list item</li>
+
+  <li>the second list item</li>
+
+  <li>the third list item</li>
+</ol>
+
+<dl>
+  <dt>the first term</dt>
+  <dd>its definition</dd>
+
+  <dt>the second term</dt>
+  <dd>its definition</dd>
+
+  <dt>the third term</dt>
+  <dd>its definition</dd>
+</dl>
+
+<p>The Willows<br>
+21 Runnymede Avenue<br>
+Morton-in-the-marsh<br>
+Oxfordshire OX27 3BQ</p>
+
+
+
+
+<pre>
+preformatted text
+</pre>
+<style type="text/css">
+  pre { color: green; font-family: monospace; }
+</style>
+<p><img src="pic.jpg" alt="sunburst graphic"
+width="32" height="30" align="left"><h1>This text will be flowed around the right side of the graphic.</h1></p>
+
+<p align="center">
+   <img src="pic.jpg" width="384" height="245"
+      alt="site map" usemap="#sitemap" border="0">
+   <map name="sitemap">
+      <area shape="circle" coords="186,44,45" 
+         href="Overview.html" alt="Getting Started">
+      <area shape="circle" coords="42,171,45" 
+         href="Style.html" alt="A Touch of Style">
+      <area shape="circle" coords="186,171,45"
+         alt="Web Page Design">
+      <area shape="circle" coords="318,173,45"
+         href="Advanced.html" alt="Advanced HTML">
+   </map>
+</p>
+
+<table border="1" cellpadding="10" cellspacing="3" width="50%">
+<tr align="center"><th>Year</th><th>Sales</th></tr>
+<tr align="center"><td>2000</td><td>$18M</td></tr>
+<tr align="center"><td>2001</td><td>$25M</td></tr>
+<tr align="center"><td>2002</td><td>&nbsp;</td></tr>
+</table>
+
+table {
+  margin-left: -4%;
+  font-family: sans-serif;
+  background: white;
+  border-width: 2;
+  border-color: white;
+}
+th { font-family: sans-serif; background: rgb(204, 204, 153) }
+td { font-family: sans-serif; background: rgb(255, 255, 153) }
+
+<table border="1" cellpadding="10" width="50%" cellspacing="0">
+<tr bgcolor="#CCCC99" align="center"><th rowspan="2" >Year<th colspan="3"><a href="http://www.lcs.mit.edu/">Sales
+<tr bgcolor="#CCCC99" ><th>North<th>South<th>Total
+<tr bgcolor="#FFFF66" align="center"><td>2000<td>$10M<td>$8M<td>$18M
+<tr bgcolor="#FFFF66" align="center"><td>2001<td>$14M<td>$11M<td>$25M
+</table>>
+
+<table border="1" cellpadding="10" width="80%">
+<caption>Projected sales revenue by year</caption>
+<tr align="center">
+  <th scope="col">Year</th>
+  <th scope="col">Sales</th>
+</tr>
+<tr align="center"><td>2000</td><td>$18M</td></tr>
+<tr align="center"><td>2001</td><td>$25M</td></tr>
+</table>
+
+<script type="text/javascript">
+if (document.images)
+{
+    image1 = new Image;
+    image2 = new Image;
+    image1.src = "pic.jpg";
+    image2.src = "pic.jpg";
+}
+
+function chgImg(name, image)
+{
+    if (document.images)
+    {
+        document[name].src = eval(image+".src");
+    }
+}
+</script>
+
+<a href="/" onMouseOver='chgImg("enter", "image2")'
+onMouseOut='chgImg("enter", "image1")'><img name="enter"
+src="pic.jpg" border="0" alt="Enter if you dare!"></a>
+<a href="javascript:gotoAd()"><img width="200" height="200" name="adBanner" src="" border="0" alt="our"></a>
+
+<a href="http://example.com/music/myband.m3u"
+type="audio/x-mpegurl">listen to our band</a>
+<div id="outer">
+asdd
+<div id="inner">some text. some text. some text.
+<p>this is a paragragh.</p>
+<p>this is a paragragh.</p>
+<p>this is a paragragh.</p>
+</div>
+</div>
+</body>
+</html>

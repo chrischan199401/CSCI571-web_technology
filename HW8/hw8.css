@@ -1,0 +1,39 @@
+.title{
+	color: rgb(74,90,147);
+	font-size: 18px;
+	margin-top: 10px;
+}
+.container-fluid{
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 0;
+}
+.row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
+
+
+.nav-pills.nav-justified > li.active > a,
+.nav-pills.nav-justified > li.active > a:visited,
+.nav-pills.nav-justified > li.active > a:hover,
+.nav-pills.nav-justified > li.active > a:focus{
+	background-color: rgb(74,90,147);
+	color: white;
+	border-radius: 0px;
+}
+
+.nav-pills.nav-justified{
+		border-bottom: 3px solid rgb(74,90,147);
+}
+
+
+
+
+body{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+td{
+	text-align: left;
+}
